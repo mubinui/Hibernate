@@ -3,8 +3,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Date;
+
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Project Started..");
 
         // Session Factory is an interface so we cannot make object
@@ -15,7 +20,21 @@ public class App {
 
 
         //Crating student
-        Student s = new Student(1003,"Mehadi Hassan ","Comilla");
+        Student s = new Student(1007,"Muhib Nayem ","Evaly");
+        //Creating object of address class
+        Address a = new Address();
+        a.setStreet("Love Street ");
+        a.setCity("Love");
+        a.setOpen(false);
+        a.setAddDate(new Date());
+        a.setX(100.00);
+
+        //Reading Image
+        FileInputStream fis = new FileInputStream("src/main/java/Love.png");
+        byte [] array = new byte[fis.available()];
+        fis.read(array);
+        a.setImage(array);
+
         System.out.println(s);
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
@@ -26,6 +45,7 @@ public class App {
 
 
         session.save(s); //Step 03  saving student object // Inserting !!!!
+        session.save(a);
         ts.commit();
 
 
