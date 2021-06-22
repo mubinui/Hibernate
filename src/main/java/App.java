@@ -19,6 +19,8 @@ public class App {
         //SessionFactory factory = cfg.build sessionFactory();
 
 
+
+//         Insert Operation
         //Crating student
         Student s = new Student(1007,"Muhib Nayem ","Evaly");
         //Creating object of address class
@@ -42,16 +44,12 @@ public class App {
         // We need to use openSession first Causes there isnt any session opened yet
         // Than we can use get current session
         Transaction ts = session.beginTransaction();//Step 02 beginning transaction
+        //Transaction is necessary for saving data
 
 
         session.save(s); //Step 03  saving student object // Inserting !!!!
         session.save(a);
         ts.commit();
-
-
-
-
-
         session.close();//Closing the session
 
     }
