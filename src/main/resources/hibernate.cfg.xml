@@ -16,6 +16,8 @@
         <mapping class="Address"/>
         <mapping class="Mapping.Answer"/>
         <mapping class="Mapping.Question"/>
+        <mapping class="MappingOTM.Project"/>
+        <mapping class="MappingOTM.Employee"/>
 <!--        for mapping the entity class-->
     </session-factory>
 </hibernate-configuration>
