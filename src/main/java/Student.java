@@ -15,14 +15,16 @@ public class Student {
     @Column(nullable = false,length = 100)
     private String name;
     private String city;
+    private Certificate certi;
 
     public Student() {
     }
 
-    public Student(int sid, String name, String city) {
+    public Student(int sid, String name, String city , Certificate certi ) {
         this.sid = sid;
         this.name = name;
         this.city = city;
+        this.certi = certi;
     }
 
     public int getSid() {
@@ -47,6 +49,14 @@ public class Student {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Certificate getCerti() {
+        return certi;
+    }
+
+    public void setCerti(Certificate certi) {
+        this.certi = certi;
     }
 
     @Override

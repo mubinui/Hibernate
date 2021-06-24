@@ -1,0 +1,25 @@
+One-To-One Mapping
+    => One element is mapped with one element
+    -> Bi-Directional
+    -> Unidirectional
+
+
+    @Entity
+    Class Question {
+        @Id
+        int question_id;
+        String question;
+        @OneToOne
+        Answer answer;  // foreign key  [ connected with answer_id ]
+    }
+
+
+
+
+    @Entity
+    Class Answer {
+
+        @Id
+        int Answer_id;
+        String Answer;
+    }

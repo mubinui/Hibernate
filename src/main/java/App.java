@@ -22,12 +22,14 @@ public class App {
 
 //         Insert Operation
         //Crating student
-        Student s = new Student(1007,"Muhib Nayem ","Evaly");
+        //Embeddable
+        Certificate certi = new Certificate("How to Love","Infinite");
+        Student s = new Student(1001,"Samindra Uic ","Dream city",certi);
         //Creating object of address class
         Address a = new Address();
         a.setStreet("Love Street ");
-        a.setCity("Love");
-        a.setOpen(false);
+        a.setCity("Dream City");
+        a.setOpen(true);
         a.setAddDate(new Date());
         a.setX(100.00);
 

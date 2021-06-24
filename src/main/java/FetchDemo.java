@@ -13,7 +13,7 @@ public class FetchDemo {
         //get  [We know the primary key here pk is id ] for grabbing single object
         Student student = session.get(Student.class,1002);
         System.out.println(student);
-        Student studenta = session.get(Student.class,1002);
+        Student studenta = session.get(Student.class,1009);
         System.out.println(studenta);
         //get returns null when object is not found
         //Use get when you are not sure the object exists or not
@@ -24,7 +24,7 @@ public class FetchDemo {
         //Works faster -> Can access proxy lazy initialization
         Address ad = (Address)session.load(Address.class,2);
         System.out.println(ad.getStreet());
-        Address ada = (Address)session.load(Address.class,2);
+        Address ada = (Address)session.load(Address.class,6);
         System.out.println(ada.getStreet());
 
 
